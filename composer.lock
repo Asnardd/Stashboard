@@ -4,8 +4,69 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06c86290cd042cc2f5333318d0449774",
+    "content-hash": "7fa57fe00f43ed89f05622510dcde32d",
     "packages": [
+        {
+            "name": "asnardd/lang-helper",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Asnardd/lang-helper.git",
+                "reference": "2ec6fcf3b2add7702e7652024cb2155fb8bacf20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Asnardd/lang-helper/zipball/2ec6fcf3b2add7702e7652024cb2155fb8bacf20",
+                "reference": "2ec6fcf3b2add7702e7652024cb2155fb8bacf20",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^10.0.0||^9.0.0||^8.22.0",
+                "pestphp/pest": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Asnardd\\LangHelper\\LangHelperServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Asnardd\\LangHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Asnard",
+                    "email": "titouan@asnard.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple package for Laravel to help you create lang files easily with a simple artisan command.",
+            "homepage": "https://github.com/asnardd/lang-helper",
+            "keywords": [
+                "Asnardd",
+                "artisan",
+                "lang-helper",
+                "laravel",
+                "translations"
+            ],
+            "support": {
+                "issues": "https://github.com/Asnardd/lang-helper/issues",
+                "source": "https://github.com/Asnardd/lang-helper/tree/2.3.0"
+            },
+            "time": "2026-03-04T10:26:10+00:00"
+        },
         {
             "name": "blade-ui-kit/blade-heroicons",
             "version": "2.7.0",
