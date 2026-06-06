@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Items\Tables;
 
+use App\Models\Tag;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -14,6 +15,8 @@ class ItemsTable
 {
     public static function configure(Table $table): Table
     {
+        $tagColors = Tag::pluck('color', 'name')->all();
+
         return $table
             ->columns([
                 TextColumn::make('name')
@@ -38,8 +41,12 @@ class ItemsTable
 
                 TextColumn::make('tags.name')
                     ->label(__('items.tags'))
-                    ->badge()
-                    ->separator(','),
+                    ->formatStateUsing(fn(string $state): string =>
+                        '<span style="background:' . e($tagColors[$state] ?? '#6b7280') . ';color:#fff;padding:0.1rem 0.45rem;border-radius:0.375rem;font-size:0.75rem;font-weight:500;white-space:nowrap">' . e($state) . '</span>'
+                    )
+                    ->html()
+                    ->wrap()
+                    ->separator(' '),
 
                 TextColumn::make('notes')
                     ->label(__('items.notes'))
