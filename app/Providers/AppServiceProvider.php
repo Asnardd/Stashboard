@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use Filament\Forms\Components\Concerns\CanBeNative;
 use Filament\Forms\Components\Field;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\ServiceProvider;
@@ -37,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
                     return is_string($state) ? trim($state) : $state;
                 });
         });
+
     }
 
     /**
