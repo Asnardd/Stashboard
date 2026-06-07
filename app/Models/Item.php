@@ -16,11 +16,17 @@ class Item extends Model
         'data',
         'notes',
         'item_type_id',
+        'user_id',
     ];
 
     protected $casts = [
         'data' => 'array',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function type(): BelongsTo
     {
@@ -32,13 +38,11 @@ class Item extends Model
         return $this->belongsToMany(Tag::class, 'item_tag_pivot');
     }
 
-    // What this item is installed in (e.g. this RAM is used in PC-01)
     public function usages(): HasMany
     {
         return $this->hasMany(ItemUsage::class);
     }
 
-    // What items are installed inside this item (e.g. PC-01 contains RAM, disk...)
     public function components(): HasMany
     {
         return $this->hasMany(ItemUsage::class, 'used_in_id');
